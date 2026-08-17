@@ -1,4 +1,4 @@
-﻿"""Thin client for the TCS GenAI Lab gateway (OpenAI-compatible).
+﻿"""Thin client for the GenAI Lab gateway (OpenAI-compatible).
 
 Everything that talks to an LLM goes through here: chat, JSON-mode chat,
 tool-calling chat, embeddings, and vision OCR.
