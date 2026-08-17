@@ -14,8 +14,8 @@ class Settings(BaseSettings):
         case_sensitive=False,
     )
 
-    # TCS GenAI Lab gateway (OpenAI-compatible)
-    api_endpoint: str = "https://genailab.tcs.in/"
+    # GenAI Lab gateway (OpenAI-compatible)
+    api_endpoint: str = ""
     api_key: str = ""
 
     # Model routing per the locked design
