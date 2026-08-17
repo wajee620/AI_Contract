@@ -10,8 +10,8 @@ An AI contract-intelligence assistant that ingests contracts (PDF/DOCX, incl. sc
 - **Team:** 5 people. **Time:** 2 days (hackathon).
 - **Judging goal:** live functionality + traceability; "architectural depth that works in the demo," not box-diagrams.
 
-## Models — TCS GenAI Lab gateway (OpenAI-compatible)
-- Endpoint (base_url): `https://genailab.tcs.in/` — call with the **OpenAI SDK**, `base_url` set here. Models support function/tool calling.
+## Models —  GenAI Lab gateway (OpenAI-compatible)
+- Endpoint (base_url): `` — call with the **OpenAI SDK**, `base_url` set here. Models support function/tool calling.
 - **API key must be rotated + kept in env only (it was exposed in chat). Never commit.**
 - Embeddings: `azure/genailab-maas-text-embedding-3-large` (3072-dim)
 - Extraction + agents: `azure/genailab-maas-gpt-4.1`
