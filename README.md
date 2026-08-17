@@ -10,7 +10,7 @@ Built per the locked design in [task.md](task.md): RAG substrate + agentic layer
 Copy `.env.example` → `.env` and set a **valid** gateway key:
 
 ```
-api_endpoint="https://genailab.tcs.in/"
+api_endpoint=""
 api_key="sk-..."
 ```
 
