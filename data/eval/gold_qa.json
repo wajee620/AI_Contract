@@ -1,0 +1,92 @@
+[
+  {
+    "contract_file": "01_msa_orion_helix",
+    "question": "What notice is required to stop the contract from automatically renewing?",
+    "expected_sections": ["3"],
+    "expected_keywords": ["15", "fifteen"]
+  },
+  {
+    "contract_file": "01_msa_orion_helix",
+    "question": "What are the payment terms and what happens if we pay late?",
+    "expected_sections": ["4"],
+    "expected_keywords": ["45", "1.5"]
+  },
+  {
+    "contract_file": "01_msa_orion_helix",
+    "question": "What uptime does the provider commit to and what do we get if they miss it?",
+    "expected_sections": ["5"],
+    "expected_keywords": ["99.5", "credit"]
+  },
+  {
+    "contract_file": "01_msa_orion_helix",
+    "question": "Is the provider's liability capped?",
+    "expected_sections": ["10"],
+    "expected_keywords": ["unlimited"]
+  },
+  {
+    "contract_file": "01_msa_orion_helix",
+    "question": "How quickly must the provider notify us of a data breach?",
+    "expected_sections": ["7"],
+    "expected_keywords": ["72"]
+  },
+  {
+    "contract_file": "01_msa_orion_helix",
+    "question": "Can we terminate for convenience, and how much notice do we need to give?",
+    "expected_sections": ["12"],
+    "expected_keywords": ["90", "ninety"]
+  },
+  {
+    "contract_file": "01_msa_orion_helix",
+    "question": "Which law governs this agreement and how are disputes resolved?",
+    "expected_sections": ["13"],
+    "expected_keywords": ["Singapore", "SIAC"]
+  },
+  {
+    "contract_file": "01_msa_orion_helix",
+    "question": "By how much can the provider raise prices at renewal?",
+    "expected_sections": ["3"],
+    "expected_keywords": ["8"]
+  },
+  {
+    "contract_file": "01_msa_orion_helix",
+    "question": "What is the total contract value and the monthly fee?",
+    "expected_sections": ["4"],
+    "expected_keywords": ["480,000", "40,000"]
+  },
+  {
+    "contract_file": "01_msa_orion_helix",
+    "question": "What audit rights does the customer have and what happens to records?",
+    "expected_sections": ["6"],
+    "expected_keywords": ["ten", "10", "three"]
+  },
+  {
+    "contract_file": "02_saas_nova_atlas",
+    "question": "What is the notice period to prevent renewal and is there a cap on fee increases?",
+    "expected_sections": ["3"],
+    "expected_keywords": ["60", "3%"]
+  },
+  {
+    "contract_file": "02_saas_nova_atlas",
+    "question": "Is there a data processing agreement in place?",
+    "expected_sections": ["7"],
+    "expected_keywords": ["DPA", "Annex 2"]
+  },
+  {
+    "contract_file": "02_saas_nova_atlas",
+    "question": "What availability is guaranteed and what can the client do if it is repeatedly missed?",
+    "expected_sections": ["5"],
+    "expected_keywords": ["99.7", "terminate"]
+  },
+  {
+    "contract_file": "02_saas_nova_atlas",
+    "question": "How is liability limited in this agreement?",
+    "expected_sections": ["10"],
+    "expected_keywords": ["twelve", "12"]
+  },
+  {
+    "contract_file": "02_saas_nova_atlas",
+    "question": "When must onboarding and data migration be completed?",
+    "expected_sections": ["2"],
+    "expected_keywords": ["30", "thirty"]
+  }
+]

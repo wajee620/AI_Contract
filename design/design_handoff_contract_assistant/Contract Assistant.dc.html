@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; }
+  * { box-sizing: border-box; }
+  ::selection { background: oklch(94% 0.045 70); }
+  a { color: oklch(46% 0.13 58); text-decoration: none; }
+  a:hover { color: oklch(38% 0.13 58); text-decoration: underline; }
+  input::placeholder { color: oklch(65% 0.02 258); }
+</style>
+</helmet>
+<div style="font-family:'Public Sans',sans-serif;background:oklch(97% 0.012 75);color:oklch(23% 0.03 262);min-height:100vh;">
+
+  <sc-if value="{{ isLanding }}" hint-placeholder-val="{{ true }}">
+    <div>
+      <div style="max-width:1180px;margin:0 auto;padding:0 32px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:26px 0;">
+          <div style="display:flex;align-items:baseline;gap:10px;">
+            <span style="font-family:'Source Serif 4',serif;font-size:22px;font-weight:600;">Covenant</span>
+            <span style="font-size:12px;color:oklch(60% 0.018 258);letter-spacing:0.04em;">Contract Intelligence</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:28px;">
+            <a href="#how" style="font-size:14px;font-weight:600;color:oklch(42% 0.025 260);">How it works</a>
+            <a href="#security" style="font-size:14px;font-weight:600;color:oklch(42% 0.025 260);">Security</a>
+            <button onClick="{{ goOverview }}" style="background:oklch(70% 0.15 68);color:oklch(23% 0.03 262);border:none;padding:11px 20px;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Public Sans',sans-serif;">Open live demo</button>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1.05fr 0.95fr;gap:56px;align-items:center;padding:72px 0 88px;">
+          <div>
+            <div style="font-size:13px;font-weight:700;letter-spacing:0.08em;color:oklch(46% 0.13 58);margin-bottom:18px;">AI CONTRACT INTELLIGENCE</div>
+            <h1 style="font-family:'Source Serif 4',serif;font-size:52px;line-height:1.1;font-weight:600;margin:0 0 24px 0;">Know every obligation.<br>Catch every risk.<br>Before it's a problem.</h1>
+            <p style="font-size:17px;line-height:1.6;color:oklch(42% 0.025 260);max-width:480px;margin:0 0 32px 0;">Covenant reads your contracts, statements of work, and amendments — then surfaces obligations, deadlines, and risks with a citation back to the exact clause, every time.</p>
+            <div style="display:flex;gap:14px;">
+              <button onClick="{{ goOverview }}" style="background:oklch(70% 0.15 68);color:oklch(23% 0.03 262);border:none;padding:14px 26px;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Public Sans',sans-serif;">Open live demo</button>
+              <a href="#how" style="display:inline-flex;align-items:center;padding:14px 26px;border-radius:8px;border:1px solid oklch(88% 0.014 70);font-size:15px;font-weight:700;color:oklch(23% 0.03 262);">See how it works</a>
+            </div>
+          </div>
+          <div style="background:oklch(99% 0.006 75);border:1px solid oklch(88% 0.014 70);border-radius:16px;padding:28px;">
+            <div style="display:flex;align-items:center;gap:10px;background:oklch(94% 0.045 30);border-radius:10px;padding:14px 16px;margin-bottom:14px;">
+              <span style="width:9px;height:9px;border-radius:50%;background:oklch(53% 0.17 27);flex-shrink:0;"></span>
+              <span style="font-size:14px;font-weight:600;">Narrow 30-day auto-renewal notice window</span>
+            </div>
+            <div style="display:flex;justify-content:center;color:oklch(65% 0.02 258);font-size:20px;margin:6px 0;">↓</div>
+            <div style="background:oklch(97% 0.012 75);border:1px solid oklch(88% 0.014 70);border-radius:10px;padding:16px;">
+              <div style="font-size:12px;color:oklch(60% 0.018 258);margin-bottom:8px;">Page 4 · Section 2.3 · Term and Renewal</div>
+              <div style="font-size:14px;line-height:1.55;">This Agreement shall renew automatically for successive twelve (12) month terms unless either Party provides written notice of non-renewal at least <span style="background:oklch(94% 0.045 70);padding:1px 3px;border-radius:3px;font-weight:600;">thirty (30) days</span> prior to the end of the then-current term.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;justify-content:center;gap:56px;padding:22px 0;border-top:1px solid oklch(88% 0.014 70);border-bottom:1px solid oklch(88% 0.014 70);">
+          <span style="font-size:12px;font-weight:700;letter-spacing:0.06em;color:oklch(60% 0.018 258);">LEGAL</span>
+          <span style="font-size:12px;font-weight:700;letter-spacing:0.06em;color:oklch(60% 0.018 258);">PROCUREMENT</span>
+          <span style="font-size:12px;font-weight:700;letter-spacing:0.06em;color:oklch(60% 0.018 258);">DELIVERY</span>
+          <span style="font-size:12px;font-weight:700;letter-spacing:0.06em;color:oklch(60% 0.018 258);">COMPLIANCE</span>
+        </div>
+
+        <div id="how" style="padding:88px 0;">
+          <h2 style="font-family:'Source Serif 4',serif;font-size:30px;font-weight:600;margin:0 0 44px 0;text-align:center;">From raw contract to answered question</h2>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px;">
+            <sc-for list="{{ howSteps }}" as="step" hint-placeholder-count="4">
+              <div>
+                <div style="width:36px;height:36px;border-radius:50%;background:oklch(70% 0.15 68);color:oklch(23% 0.03 262);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;margin-bottom:16px;">{{ step.n }}</div>
+                <h3 style="font-family:'Source Serif 4',serif;font-size:18px;font-weight:600;margin:0 0 8px 0;">{{ step.title }}</h3>
+                <p style="font-size:14px;line-height:1.55;color:oklch(42% 0.025 260);margin:0;">{{ step.text }}</p>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+
+        <div style="padding:0 0 88px;">
+          <h2 style="font-family:'Source Serif 4',serif;font-size:30px;font-weight:600;margin:0 0 8px 0;text-align:center;">Everything your team needs to stay ahead</h2>
+          <p style="text-align:center;color:oklch(42% 0.025 260);margin:0 0 44px 0;">Built for procurement, legal, and delivery teams managing live contracts.</p>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+            <sc-for list="{{ features }}" as="f" hint-placeholder-count="6">
+              <div style="background:oklch(99% 0.006 75);border:1px solid oklch(88% 0.014 70);border-radius:12px;padding:24px;">
+                <h3 style="font-size:16px;font-weight:700;margin:0 0 8px 0;">{{ f.title }}</h3>
+                <p style="font-size:14px;line-height:1.55;color:oklch(42% 0.025 260);margin:0;">{{ f.text }}</p>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+
+        <div id="security" style="padding:0 0 88px;">
+          <div style="background:oklch(99% 0.006 75);border:1px solid oklch(88% 0.014 70);border-radius:16px;padding:44px;">
+            <h2 style="font-family:'Source Serif 4',serif;font-size:26px;font-weight:600;margin:0 0 24px 0;">Built with responsible AI in mind</h2>
+            <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:18px 40px;">
+              <sc-for list="{{ raiPoints }}" as="p" hint-placeholder-count="4">
+                <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:oklch(42% 0.025 260);">
+                  <span style="color:oklch(46% 0.13 58);flex-shrink:0;">—</span>
+                  <span>{{ p }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align:center;padding:0 0 72px;">
+          <h2 style="font-family:'Source Serif 4',serif;font-size:28px;font-weight:600;margin:0 0 24px 0;">See it on your own contracts</h2>
+          <button onClick="{{ goOverview }}" style="background:oklch(70% 0.15 68);color:oklch(23% 0.03 262);border:none;padding:15px 30px;border-radius:8px;font-size:16px;font-weight:700;cursor:pointer;font-family:'Public Sans',sans-serif;">Open live demo</button>
+        </div>
+
+        <div style="border-top:1px solid oklch(88% 0.014 70);padding:24px 0;text-align:center;font-size:13px;color:oklch(60% 0.018 258);">Covenant — synthetic demo data. Not for use with real client or vendor information.</div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ showApp }}" hint-placeholder-val="{{ false }}">
+    <div>
+      <div style="position:sticky;top:0;z-index:10;background:oklch(99% 0.006 75);border-bottom:1px solid oklch(88% 0.014 70);">
+        <div style="max-width:1280px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;gap:28px;">
+          <div style="display:flex;align-items:center;gap:8px;cursor:pointer;" onClick="{{ goLanding }}">
+            <span style="font-family:'Source Serif 4',serif;font-size:19px;font-weight:600;">Covenant</span>
+          </div>
+          <div style="display:flex;gap:4px;flex:1;">
+            <sc-for list="{{ navItems }}" as="n" hint-placeholder-count="4">
+              <button onClick="{{ n.onClick }}" style="border:none;background:{{ n.bg }};color:{{ n.color }};padding:9px 16px;border-radius:7px;font-size:14px;font-weight:600;cursor:pointer;font-family:'Public Sans',sans-serif;">{{ n.label }}</button>
+            </sc-for>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <span style="font-size:13px;color:oklch(60% 0.018 258);padding:7px 14px;background:oklch(95% 0.012 72);border-radius:6px;">Alpine Logistics — Meridian MSA</span>
+            <button onClick="{{ goUpload }}" style="background:transparent;color:oklch(23% 0.03 262);border:1px solid oklch(88% 0.014 70);padding:9px 16px;border-radius:7px;font-size:14px;font-weight:600;cursor:pointer;font-family:'Public Sans',sans-serif;">Upload</button>
+          </div>
+        </div>
+      </div>
+
+      <div style="max-width:1280px;margin:0 auto;padding:32px;">
+
+        <sc-if value="{{ isUpload }}" hint-placeholder-val="{{ false }}">
+          <div>
+            <h1 style="font-family:'Source Serif 4',serif;font-size:28px;font-weight:600;margin:0 0 6px 0;">Upload & Ingest</h1>
+            <p style="color:oklch(42% 0.025 260);margin:0 0 28px 0;">Native-text pages are parsed directly; scanned pages fall back to vision-model OCR. Every clause gets a stable ID for traceability downstream.</p>
+            <div style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:24px;">
+              <div>
+                <div style="border:2px dashed oklch(88% 0.014 70);border-radius:14px;padding:44px;text-align:center;background:oklch(99% 0.006 75);margin-bottom:20px;">
+                  <div style="font-size:16px;font-weight:600;margin-bottom:6px;">Drag a contract here, or browse</div>
+                  <div style="font-size:13px;color:oklch(60% 0.018 258);margin-bottom:20px;">PDF, DOCX — including scanned / image-only PDFs</div>
+                  <button onClick="{{ runUploadDemo }}" style="background:oklch(70% 0.15 68);color:oklch(23% 0.03 262);border:none;padding:12px 22px;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Public Sans',sans-serif;opacity:{{ simulateBtnOpacity }};">Simulate live upload</button>
+                </div>
+                <sc-if value="{{ uploadStarted }}" hint-placeholder-val="{{ false }}">
+                  <div style="background:oklch(99% 0.006 75);border:1px solid oklch(88% 0.014 70);border-radius:12px;padding:22px;">
+                    <div style="height:6px;background:oklch(95% 0.012 72);border-radius:3px;overflow:hidden;margin-bottom:18px;">
+                      <div style="height:100%;background:oklch(70% 0.15 68);border-radius:3px;width:{{ uploadProgressPct }}%;"></div>
+                    </div>
+                    <sc-for list="{{ uploadStepsView }}" as="step" hint-placeholder-count="7">
+                      <div style="display:flex;gap:10px;align-items:center;padding:6px 0;">
+                        <span style="color:{{ step.iconColor }};font-size:14px;width:16px;">{{ step.icon }}</span>
+                        <span style="font-size:14px;color:{{ step.textColor }};">{{ step.label }}</span>
+                      </div>
+                    </sc-for>
+                    <sc-if value="{{ uploadComplete }}" hint-placeholder-val="{{ false }}">
+                      <button onClick="{{ goOverview }}" style="margin-top:14px;background:oklch(23% 0.03 262);color:white;border:none;padding:11px 20px;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Public Sans',sans-serif;">View contract overview →</button>
+                    </sc-if>
+                  </div>
+                </sc-if>
+              </div>
+              <div>
+                <div style="font-size:13px;font-weight:700;letter-spacing:0.04em;color:oklch(60% 0.018 258);margin-bottom:12px;">RECENTLY INGESTED</div>
+                <div onClick="{{ goOverview }}" style="cursor:pointer;background:oklch(99% 0.006 75);border:1px solid oklch(88% 0.014 70);border-radius:12px;padding:18px;margin-bottom:12px;">
+                  <div style="font-weight:700;font-size:14px;margin-bottom:4px;">Alpine Logistics — Meridian MSA</div>
+                  <div style="font-size:13px;color:oklch(60% 0.018 258);">42 pages · 68 clauses</div>
+                  <span style="display:inline-block;margin-top:8px;font-size:12px;font-weight:700;color:oklch(50% 0.09 150);background:oklch(94% 0.035 150);padding:3px 9px;border-radius:12px;">Indexed</span>
+                </div>
+                <div style="background:oklch(99% 0.006 75);border:1px solid oklch(88% 0.014 70);border-radius:12px;padding:18px;">
+                  <div style="font-weight:700;font-size:14px;margin-bottom:4px;">Nimbus Retail — Vantage Staffing SOW</div>
+                  <div style="font-size:13px;color:oklch(60% 0.018 258);">18 pages · 31 clauses · scanned (OCR)</div>
+                  <span style="display:inline-block;margin-top:8px;font-size:12px;font-weight:700;color:oklch(50% 0.09 150);background:oklch(94% 0.035 150);padding:3px 9px;border-radius:12px;">Indexed</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isOverview }}" hint-placeholder-val="{{ false }}">
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px;">
+              <div>
+                <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;">
+                  <h1 style="font-family:'Source Serif 4',serif;font-size:28px;font-weight:600;margin:0;">Master Services Agreement</h1>
+                  <span style="font-size:12px;font-weight:700;color:oklch(50% 0.09 150);background:oklch(94% 0.035 150);padding:4px 11px;border-radius:12px;">Active</span>
+                </div>
+                <div style="color:oklch(42% 0.025 260);font-size:15px;">Alpine Logistics Group ↔ Meridian Software Services Inc.</div>
+              </div>
+              <button onClick="{{ goAsk }}" style="background:transparent;color:oklch(23% 0.03 262);border:1px solid oklch(88% 0.014 70);padding:11px 18px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:'Public Sans',sans-serif;">Ask about this contract</button>
+            </div>
+
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;background:oklch(99% 0.006 75);border:1px solid oklch(88% 0.014 70);border-radius:12px;padding:20px 24px;margin-bottom:20px;">
+              <div><div style="font-size:12px;color:oklch(60% 0.018 258);margin-bottom:4px;">Effective Date</div><div style="font-size:14px;font-weight:600;">Mar 1, 2024</div></div>
+              <div><div style="font-size:12px;color:oklch(60% 0.018 258);margin-bottom:4px;">Term</div><div style="font-size:14px;font-weight:600;">36 months, auto-renewing</div></div>
+              <div><div style="font-size:12px;color:oklch(60% 0.018 258);margin-bottom:4px;">Governing Law</div><div style="font-size:14px;font-weight:600;">State of Delaware</div></div>
+              <div><div style="font-size:12px;color:oklch(60% 0.018 258);margin-bottom:4px;">Total Value</div><div style="font-size:14px;font-weight:600;">$2.45M / yr est.</div></div>
+            </div>
+
+            <div style="background:oklch(99% 0.006 75);border:1px solid oklch(88% 0.014 70);border-radius:12px;padding:24px;margin-bottom:20px;">
+              <h2 style="font-family:'Source Serif 4',serif;font-size:18px;font-weight:600;margin:0 0 10px 0;">Executive Summary</h2>
+              <p style="font-size:14.5px;line-height:1.65;color:oklch(23% 0.03 262);margin:0 0 12px 0;">This 36-month master services agreement between Alpine Logistics (Client) and Meridian Software Services (Vendor) auto-renews annually and covers ongoing delivery, reporting, and data-processing obligations. Two high-severity, non-standard risks stand out: a narrow 30-day renewal notice window and uncapped liability for data breaches. Ten obligations are actively tracked, the nearest being a Net-45 invoice payment.</p>
+              <p style="font-size:12.5px;font-style:italic;color:oklch(60% 0.018 258);margin:0;">Generated by AI from contract clauses — verify against source before relying on this summary.</p>
+            </div>
+
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px;">
+              <div style="background:oklch(99% 0.006 75);border:1px solid oklch(88% 0.014 70);border-radius:12px;padding:18px;">
+                <div style="font-family:'Source Serif 4',serif;font-size:26px;font-weight:600;">{{ totalObligations }}</div>
+                <div style="font-size:13px;color:oklch(60% 0.018 258);">Obligations tracked</div>
+              </div>
+              <div style="background:oklch(99% 0.006 75);border:1px solid oklch(88% 0.014 70);border-radius:12px;padding:18px;">
+                <div style="font-family:'Source Serif 4',serif;font-size:26px;font-weight:600;color:oklch(53% 0.17 27);">{{ highRiskCount }}</div>
+                <div style="font-size:13px;color:oklch(60% 0.018 258);">High-risk flags</div>
+              </div>
+              <div style="background:oklch(99% 0.006 75);border:1px solid oklch(88% 0.014 70);border-radius:12px;padding:18px;">
+                <div style="font-family:'Source Serif 4',serif;font-size:26px;font-weight:600;">{{ nextRenewal }}</div>
+                <div style="font-size:13px;color:oklch(60% 0.018 258);">Next renewal deadline</div>
+              </div>
+              <div style="background:oklch(99% 0.006 75);border:1px solid oklch(88% 0.014 70);border-radius:12px;padding:18px;">
+                <div style="font-family:'Source Serif 4',serif;font-size:26px;font-weight:600;">{{ totalClauses }}</div>
+                <div style="font-size:13px;color:oklch(60% 0.018 258);">Clauses reviewed</div>
+              </div>
+            </div>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+              <div>
+                <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px;">
+                  <h2 style="font-size:16px;font-weight:700;margin:0;">Top risks</h2>
+                  <a href="#" onClick="{{ goRisk }}" style="font-size:13px;font-weight:600;">View all →</a>
+                </div>
+                <sc-for list="{{ topRisksView }}" as="r" hint-placeholder-count="3">
+                  <div onClick="{{ r.onOpen }}" style="cursor:pointer;display:flex;gap:12px;padding:14px;background:oklch(99% 0.006 75);border:1px solid oklch(88% 0.014 70);border-radius:10px;margin-bottom:10px;">
+                    <span style="width:9px;height:9px;border-radius:50%;background:{{ r.severityColor }};margin-top:5px;flex-shrink:0;"></span>
+                    <div>
+                      <div style="font-size:14px;font-weight:600;margin-bottom:3px;">{{ r.title }}</div>
+                      <div style="font-size:12.5px;color:oklch(60% 0.018 258);">§{{ r.sourceClauseId }} · view source clause</div>
+                    </div>
+                  </div>
+                </sc-for>
+              </div>
+              <div>
+                <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px;">
+                  <h2 style="font-size:16px;font-weight:700;margin:0;">Upcoming obligations</h2>
+                  <a href="#" onClick="{{ goTracker }}" style="font-size:13px;font-weight:600;">View all →</a>
+                </div>
+                <sc-for list="{{ upcomingPreview }}" as="o" hint-placeholder-count="3">
+                  <div onClick="{{ o.onOpen }}" style="cursor:pointer;display:flex;justify-content:space-between;padding:14px;background:oklch(99% 0.006 75);border:1px solid oklch(88% 0.014 70);border-radius:10px;margin-bottom:10px;">
+                    <div>
+                      <div style="font-size:14px;font-weight:600;margin-bottom:3px;">{{ o.description }}</div>
+                      <div style="font-size:12.5px;color:oklch(60% 0.018 258);">{{ o.typeLabel }} · {{ o.party }}</div>
+                    </div>
+                    <div style="font-size:13px;font-weight:600;white-space:nowrap;margin-left:12px;">{{ o.dueLabel }}</div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isTracker }}" hint-placeholder-val="{{ false }}">
+          <div>
+            <h1 style="font-family:'Source Serif 4',serif;font-size:28px;font-weight:600;margin:0 0 20px 0;">Obligation Tracker</h1>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;">
+              <sc-for list="{{ obligationTypeChips }}" as="c" hint-placeholder-count="8">
+                <button onClick="{{ c.onClick }}" style="border:none;background:{{ c.bg }};color:{{ c.color }};padding:8px 14px;border-radius:20px;font-size:13px;font-weight:600;cursor:pointer;font-family:'Public Sans',sans-serif;">{{ c.label }}</button>
+              </sc-for>
+              <button onClick="{{ toggleDueSoon }}" style="border:none;background:{{ dueSoonBg }};color:{{ dueSoonColor }};padding:8px 14px;border-radius:20px;font-size:13px;font-weight:600;cursor:pointer;font-family:'Public Sans',sans-serif;">Due within 90 days</button>
+            </div>
+            <div style="background:oklch(99% 0.006 75);border:1px solid oklch(88% 0.014 70);border-radius:12px;overflow:hidden;">
+              <div style="display:grid;grid-template-columns:2.2fr 0.8fr 1fr 1fr 1fr;padding:12px 18px;border-bottom:1px solid oklch(88% 0.014 70);font-size:12px;font-weight:700;color:oklch(60% 0.018 258);letter-spacing:0.03em;">
+                <div>OBLIGATION</div>
+                <div>PARTY</div>
+                <div>TYPE</div>
+                <div style="cursor:pointer;" onClick="{{ toggleObligationSort }}">DUE {{ sortArrow }}</div>
+                <div>STATUS</div>
+              </div>
+              <sc-for list="{{ obligationsView }}" as="o" hint-placeholder-count="8">
+                <div onClick="{{ o.onOpen }}" style="cursor:pointer;display:grid;grid-template-columns:2.2fr 0.8fr 1fr 1fr 1fr;padding:14px 18px;border-bottom:1px solid oklch(88% 0.014 70);align-items:center;font-size:14px;" style-hover="background:oklch(95% 0.012 72);">
+                  <div>
+                    <div style="font-weight:600;margin-bottom:2px;">{{ o.description }}</div>
+                    <div style="font-size:12px;color:oklch(60% 0.018 258);">§{{ o.sourceClauseId }} · {{ o.owner }}</div>
+                  </div>
+                  <div style="color:oklch(42% 0.025 260);">{{ o.party }}</div>
+                  <div style="color:oklch(42% 0.025 260);">{{ o.typeLabel }}</div>
+                  <div style="color:oklch(42% 0.025 260);">{{ o.dueLabel }}</div>
+                  <div><span style="font-size:12px;font-weight:700;color:{{ o.statusColor }};background:{{ o.statusBg }};padding:4px 10px;border-radius:12px;">{{ o.statusLabel }}</span></div>
+                </div>
+              </sc-for>
+            </div>
+            <sc-if value="{{ obligationsEmpty }}" hint-placeholder-val="{{ false }}">
+              <div style="text-align:center;padding:40px;color:oklch(60% 0.018 258);">No obligations match these filters.</div>
+            </sc-if>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isRisk }}" hint-placeholder-val="{{ false }}">
+          <div>
+            <h1 style="font-family:'Source Serif 4',serif;font-size:28px;font-weight:600;margin:0 0 16px 0;">Risk Assessment</h1>
+            <div style="display:flex;gap:12px;margin-bottom:16px;">
+              <div style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;"><span style="width:9px;height:9px;border-radius:50%;background:oklch(53% 0.17 27);"></span>{{ riskCounts.high }} High</div>
+              <div style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;"><span style="width:9px;height:9px;border-radius:50%;background:oklch(60% 0.14 63);"></span>{{ riskCounts.med }} Medium</div>
+              <div style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;"><span style="width:9px;height:9px;border-radius:50%;background:oklch(50% 0.09 150);"></span>{{ riskCounts.low }} Low</div>
+            </div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;">
+              <sc-for list="{{ riskCategoryChips }}" as="c" hint-placeholder-count="6">
+                <button onClick="{{ c.onClick }}" style="border:none;background:{{ c.bg }};color:{{ c.color }};padding:8px 14px;border-radius:20px;font-size:13px;font-weight:600;cursor:pointer;font-family:'Public Sans',sans-serif;">{{ c.label }}</button>
+              </sc-for>
+            </div>
+            <sc-for list="{{ risksView }}" as="r" hint-placeholder-count="8">
+              <div style="background:oklch(99% 0.006 75);border:1px solid oklch(88% 0.014 70);border-radius:12px;padding:20px;margin-bottom:12px;">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                  <span style="font-size:12px;font-weight:700;color:{{ r.severityColor }};background:{{ r.severityBg }};padding:4px 11px;border-radius:12px;">{{ r.severityLabel }}</span>
+                  <span style="font-size:12px;font-weight:600;color:oklch(60% 0.018 258);">{{ r.categoryLabel }}</span>
+                </div>
+                <h3 style="font-family:'Source Serif 4',serif;font-size:17px;font-weight:600;margin:0 0 8px 0;">{{ r.title }}</h3>
+                <p style="font-size:14px;line-height:1.55;color:oklch(42% 0.025 260);margin:0 0 14px 0;">{{ r.rationale }}</p>
+                <div style="display:flex;justify-content:space-between;align-items:center;">
+                  <sc-if value="{{ r.nonStandard }}" hint-placeholder-val="{{ false }}">
+                    <span style="font-size:12px;font-weight:700;color:oklch(46% 0.13 58);background:oklch(94% 0.045 70);padding:4px 11px;border-radius:12px;">Non-standard clause</span>
+                  </sc-if>
+                  <sc-if value="{{ r.notNonStandard }}" hint-placeholder-val="{{ false }}">
+                    <span></span>
+                  </sc-if>
+                  <button onClick="{{ r.onOpen }}" style="background:transparent;border:none;color:oklch(23% 0.03 262);font-size:13px;font-weight:700;cursor:pointer;font-family:'Public Sans',sans-serif;">View source clause §{{ r.sourceClauseId }} →</button>
+                </div>
+              </div>
+            </sc-for>
+
+            <div style="background:oklch(99% 0.006 75);border:1px solid oklch(88% 0.014 70);border-radius:12px;padding:24px;margin-top:24px;">
+              <h3 style="font-family:'Source Serif 4',serif;font-size:17px;font-weight:600;margin:0 0 4px 0;">Example: non-standard clause detected</h3>
+              <p style="font-size:12.5px;color:oklch(60% 0.018 258);margin:0 0 16px 0;">§2.3 Term and Renewal — compared against the standard clause library.</p>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                <div style="background:oklch(97% 0.012 75);border:1px solid oklch(88% 0.014 70);border-radius:10px;padding:16px;">
+                  <div style="font-size:11px;font-weight:700;letter-spacing:0.04em;color:oklch(60% 0.018 258);margin-bottom:8px;">STANDARD CLAUSE LIBRARY</div>
+                  <div style="font-size:13.5px;line-height:1.6;">This Agreement shall renew automatically for successive twelve (12) month terms unless either Party provides written notice of non-renewal at least <span style="text-decoration:underline;font-weight:700;color:oklch(46% 0.13 58);">sixty (60) days</span> prior to the end of the then-current term. Either Party may elect non-renewal without cause.</div>
+                </div>
+                <div style="background:oklch(94% 0.045 30);border:1px solid oklch(88% 0.045 30);border-radius:10px;padding:16px;">
+                  <div style="font-size:11px;font-weight:700;letter-spacing:0.04em;color:oklch(53% 0.17 27);margin-bottom:8px;">THIS CONTRACT — §2.3</div>
+                  <div style="font-size:13.5px;line-height:1.6;">This Agreement shall renew automatically for successive twelve (12) month terms unless either Party provides written notice of non-renewal at least <span style="text-decoration:underline;font-weight:700;color:oklch(53% 0.17 27);">thirty (30) days</span> prior to the end of the then-current term.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isClause }}" hint-placeholder-val="{{ false }}">
+          <div>
+            <button onClick="{{ goBackFromClause }}" style="background:transparent;border:none;color:oklch(42% 0.025 260);font-size:14px;font-weight:600;cursor:pointer;font-family:'Public Sans',sans-serif;margin-bottom:16px;padding:0;">← Back</button>
+            <div style="display:grid;grid-template-columns:1.3fr 0.7fr;gap:24px;">
+              <div>
+                <div style="background:oklch(99% 0.006 75);border:1px solid oklch(88% 0.014 70);border-radius:12px;padding:28px;margin-bottom:14px;">
+                  <div style="font-size:12px;color:oklch(60% 0.018 258);margin-bottom:14px;">Page {{ clause.page }} · Section {{ clause.id }}</div>
+                  <h2 style="font-family:'Source Serif 4',serif;font-size:20px;font-weight:600;margin:0 0 16px 0;">{{ clause.heading }}</h2>
+                  <div style="font-size:15px;line-height:1.75;background:oklch(94% 0.045 70);padding:16px 18px;border-radius:8px;">{{ clause.text }}</div>
+                </div>
+                <div style="display:flex;justify-content:space-between;">
+                  <button onClick="{{ goPrevClause }}" style="background:transparent;color:{{ prevColor }};border:1px solid oklch(88% 0.014 70);padding:10px 16px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;font-family:'Public Sans',sans-serif;">← Previous clause</button>
+                  <button onClick="{{ goNextClause }}" style="background:transparent;color:{{ nextColor }};border:1px solid oklch(88% 0.014 70);padding:10px 16px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;font-family:'Public Sans',sans-serif;">Next clause →</button>
+                </div>
+              </div>
+              <div>
+                <div style="background:oklch(99% 0.006 75);border:1px solid oklch(88% 0.014 70);border-radius:12px;padding:20px;margin-bottom:14px;">
+                  <h3 style="font-size:14px;font-weight:700;margin:0 0 12px 0;">Linked obligations</h3>
+                  <sc-for list="{{ linkedObligations }}" as="o" hint-placeholder-count="1">
+                    <div style="padding:10px 0;border-top:1px solid oklch(88% 0.014 70);">
+                      <div style="font-size:13.5px;font-weight:600;margin-bottom:3px;">{{ o.description }}</div>
+                      <div style="font-size:12px;color:oklch(60% 0.018 258);">{{ o.party }} · due {{ o.dueLabel }}</div>
+                    </div>
+                  </sc-for>
+                  <sc-if value="{{ noLinkedObligations }}" hint-placeholder-val="{{ false }}">
+                    <div style="font-size:13px;color:oklch(60% 0.018 258);">No obligation tied to this clause.</div>
+                  </sc-if>
+                </div>
+                <div style="background:oklch(99% 0.006 75);border:1px solid oklch(88% 0.014 70);border-radius:12px;padding:20px;margin-bottom:14px;">
+                  <h3 style="font-size:14px;font-weight:700;margin:0 0 12px 0;">Risk assessment</h3>
+                  <sc-if value="{{ hasLinkedRisk }}" hint-placeholder-val="{{ false }}">
+                    <span style="font-size:12px;font-weight:700;color:{{ linkedRiskColor }};background:{{ linkedRiskBg }};padding:4px 11px;border-radius:12px;">{{ linkedRiskSeverity }}</span>
+                    <div style="font-size:13.5px;font-weight:600;margin:10px 0 6px 0;">{{ linkedRiskTitle }}</div>
+                    <div style="font-size:13px;line-height:1.5;color:oklch(42% 0.025 260);">{{ linkedRiskRationale }}</div>
+                  </sc-if>
+                  <sc-if value="{{ noLinkedRisk }}" hint-placeholder-val="{{ false }}">
+                    <div style="font-size:13px;color:oklch(60% 0.018 258);">No risk flagged for this clause.</div>
+                  </sc-if>
+                </div>
+                <sc-if value="{{ hasStandardText }}" hint-placeholder-val="{{ false }}">
+                  <div style="background:oklch(99% 0.006 75);border:1px solid oklch(88% 0.014 70);border-radius:12px;padding:20px;">
+                    <h3 style="font-size:14px;font-weight:700;margin:0 0 12px 0;">Non-standard clause diff</h3>
+                    <div style="font-size:11px;font-weight:700;color:oklch(60% 0.018 258);margin-bottom:4px;">STANDARD</div>
+                    <div style="font-size:13px;line-height:1.5;margin-bottom:12px;">{{ clause.standardText }}</div>
+                    <div style="font-size:11px;font-weight:700;color:oklch(53% 0.17 27);margin-bottom:4px;">THIS CONTRACT</div>
+                    <div style="font-size:13px;line-height:1.5;">{{ clause.text }}</div>
+                  </div>
+                </sc-if>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isAsk }}" hint-placeholder-val="{{ false }}">
+          <div>
+            <h1 style="font-family:'Source Serif 4',serif;font-size:28px;font-weight:600;margin:0 0 6px 0;">Ask Covenant</h1>
+            <p style="color:oklch(42% 0.025 260);margin:0 0 24px 0;">Ask questions about this contract — every answer cites the exact clause it came from.</p>
+            <div style="display:grid;grid-template-columns:230px 1fr;gap:20px;">
+              <div>
+                <div style="font-size:12px;font-weight:700;letter-spacing:0.04em;color:oklch(60% 0.018 258);margin-bottom:10px;">TRY ASKING</div>
+                <button onClick="{{ sendPresetRenewal }}" style="display:block;width:100%;text-align:left;background:oklch(99% 0.006 75);border:1px solid oklch(88% 0.014 70);padding:12px 14px;border-radius:10px;font-size:13.5px;cursor:pointer;font-family:'Public Sans',sans-serif;margin-bottom:8px;">When does this contract renew, and how do we stop it?</button>
+                <button onClick="{{ sendPresetLiability }}" style="display:block;width:100%;text-align:left;background:oklch(99% 0.006 75);border:1px solid oklch(88% 0.014 70);padding:12px 14px;border-radius:10px;font-size:13.5px;cursor:pointer;font-family:'Public Sans',sans-serif;margin-bottom:8px;">What's our liability exposure if there's a data breach?</button>
+                <button onClick="{{ sendPresetNonstandard }}" style="display:block;width:100%;text-align:left;background:oklch(99% 0.006 75);border:1px solid oklch(88% 0.014 70);padding:12px 14px;border-radius:10px;font-size:13.5px;cursor:pointer;font-family:'Public Sans',sans-serif;">Is there anything non-standard vs our usual contracts?</button>
+              </div>
+              <div>
+                <div style="background:oklch(99% 0.006 75);border:1px solid oklch(88% 0.014 70);border-radius:12px;padding:20px;min-height:380px;margin-bottom:14px;display:flex;flex-direction:column;gap:14px;">
+                  <sc-for list="{{ askThreadView }}" as="m" hint-placeholder-count="2">
+                    <div style="display:flex;flex-direction:column;align-self:{{ m.alignSelf }};max-width:78%;">
+                      <div style="background:{{ m.bubbleBg }};color:{{ m.bubbleColor }};border:{{ m.bubbleBorder }};border-radius:12px;padding:12px 16px;font-size:14px;line-height:1.55;">{{ m.text }}</div>
+                      <sc-if value="{{ m.hasCitations }}" hint-placeholder-val="{{ false }}">
+                        <div style="display:flex;gap:6px;margin-top:6px;flex-wrap:wrap;">
+                          <sc-for list="{{ m.citationsView }}" as="c" hint-placeholder-count="2">
+                            <button onClick="{{ c.onOpen }}" style="border:1px solid oklch(88% 0.014 70);background:oklch(97% 0.012 75);color:oklch(23% 0.03 262);font-size:12px;font-weight:600;padding:4px 10px;border-radius:10px;cursor:pointer;font-family:'Public Sans',sans-serif;">§{{ c.id }}</button>
+                          </sc-for>
+                        </div>
+                      </sc-if>
+                      <sc-if value="{{ m.showConfidence }}" hint-placeholder-val="{{ false }}">
+                        <div style="margin-top:6px;">
+                          <span style="font-size:11.5px;font-weight:700;color:{{ m.confidenceColor }};background:{{ m.confidenceBg }};padding:3px 9px;border-radius:10px;">{{ m.confidenceLabel }}</span>
+                        </div>
+                      </sc-if>
+                    </div>
+                  </sc-for>
+                </div>
+                <div style="display:flex;gap:10px;">
+                  <input value="{{ askInput }}" onChange="{{ setAskInput }}" onKeyDown="{{ onAskKeyDown }}" placeholder="Ask a question about this contract…" style="flex:1;border:1px solid oklch(88% 0.014 70);border-radius:8px;padding:13px 16px;font-size:14px;font-family:'Public Sans',sans-serif;background:oklch(99% 0.006 75);color:oklch(23% 0.03 262);"></input>
+                  <button onClick="{{ sendAsk }}" style="background:oklch(23% 0.03 262);color:white;border:none;padding:13px 22px;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Public Sans',sans-serif;">Send</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const OBLIGATIONS = [
+  {id:'ob1', description:'Deliver quarterly service performance report', party:'Vendor', type:'reporting', dueDate:'2026-07-15', sourceClauseId:'7.2', owner:'Vendor Delivery Lead'},
+  {id:'ob2', description:'Renew Data Processing Addendum (Exhibit C)', party:'Vendor', type:'data_protection', dueDate:'2026-09-01', sourceClauseId:'12.1', owner:'Vendor Compliance'},
+  {id:'ob3', description:'Provide annual SOC 2 Type II report', party:'Vendor', type:'compliance', dueDate:'2026-10-01', sourceClauseId:'9.4', owner:'Vendor Compliance'},
+  {id:'ob4', description:'Pay undisputed invoice #INV-2214 (Net 45)', party:'Client', type:'payment', dueDate:'2026-07-05', sourceClauseId:'5.1', owner:'Client AP'},
+  {id:'ob5', description:'Send renewal / non-renewal notice before auto-renewal', party:'Client', type:'renewal', dueDate:'2026-08-01', sourceClauseId:'2.3', owner:'Client Procurement'},
+  {id:'ob6', description:'Complete Phase 3 rollout milestone', party:'Vendor', type:'delivery', dueDate:'2026-07-20', sourceClauseId:'4.5', owner:'Vendor Delivery Lead'},
+  {id:'ob7', description:'Renew commercial general & cyber liability insurance', party:'Vendor', type:'compliance', dueDate:'2026-09-15', sourceClauseId:'10.2', owner:'Vendor Legal'},
+  {id:'ob8', description:'Approve or reject change orders within 5 business days', party:'Client', type:'delivery', dueDate:null, sourceClauseId:'6.3', owner:'Client Delivery Lead'},
+  {id:'ob9', description:'Notify Client of data breach within 72 hours', party:'Vendor', type:'data_protection', dueDate:null, sourceClauseId:'12.4', owner:'Vendor Security'},
+  {id:'ob10', description:'Provide 90 days notice for termination for convenience', party:'Client', type:'termination', dueDate:null, sourceClauseId:'14.1', owner:'Client Procurement'}
+];
+
+const RISKS = [
+  {id:'rk1', category:'termination_renewal', severity:'high', title:'Narrow 30-day auto-renewal notice window', rationale:"Most master agreements require 60-90 days notice. A 30-day window makes it easy to miss the deadline and be locked into another 12-month term.", sourceClauseId:'2.3', nonStandard:true},
+  {id:'rk2', category:'legal', severity:'high', title:'Uncapped liability for data breaches', rationale:"The liability cap explicitly excludes Section 12 (Data Protection), leaving Client's vendor relationship exposed to unlimited damages for a breach.", sourceClauseId:'13.2', nonStandard:true},
+  {id:'rk3', category:'commercial', severity:'med', title:'No CPI / inflation adjustment across the term', rationale:'Fees are fixed for the Initial Term with no escalation clause, unusual for a multi-year services agreement.', sourceClauseId:'5.4', nonStandard:false},
+  {id:'rk4', category:'compliance', severity:'med', title:'DPA renewal not explicitly tied to MSA term', rationale:"The Data Processing Addendum's duration is open-ended and not cross-referenced to the MSA term, risking a lapsed DPA while processing continues.", sourceClauseId:'12.1', nonStandard:false},
+  {id:'rk5', category:'delivery', severity:'low', title:'Change-order SLA has no escalation path', rationale:'A 5-day review SLA exists, but the clause is silent on what happens if it is missed.', sourceClauseId:'6.3', nonStandard:false},
+  {id:'rk6', category:'legal', severity:'high', title:'Broad, uncapped indemnification by Client', rationale:'Client indemnifies Vendor for third-party claims "without limitation as to dollar amount" - an unusually one-sided allocation of risk.', sourceClauseId:'13.5', nonStandard:true},
+  {id:'rk7', category:'commercial', severity:'med', title:'Early termination fee equal to 6 months of fees', rationale:'Terminating for convenience before the Initial Term ends triggers a fee equal to six months of current fees.', sourceClauseId:'14.3', nonStandard:false},
+  {id:'rk8', category:'compliance', severity:'low', title:'Audit rights limited to once per year', rationale:"Client may only audit Vendor's compliance once per calendar year, which may be insufficient for high-risk engagements.", sourceClauseId:'9.1', nonStandard:false}
+];
+
+const CLAUSES = {
+  '2.3': {id:'2.3', heading:'Term and Renewal', page:4, text:'This Agreement shall renew automatically for successive twelve (12) month terms unless either Party provides written notice of non-renewal at least thirty (30) days prior to the end of the then-current term.', standardText:'This Agreement shall renew automatically for successive twelve (12) month terms unless either Party provides written notice of non-renewal at least sixty (60) days prior to the end of the then-current term. Either Party may elect non-renewal without cause.'},
+  '4.5': {id:'4.5', heading:'Deliverables Schedule', page:9, text:'Vendor shall complete the Phase 3 rollout milestones as set forth in Exhibit B, Schedule of Deliverables, subject to the acceptance criteria defined therein.'},
+  '5.1': {id:'5.1', heading:'Invoicing', page:11, text:'Client shall pay undisputed invoices within forty-five (45) days of receipt ("Net 45"). Disputed amounts shall be resolved under Section 5.6.'},
+  '5.4': {id:'5.4', heading:'Fees and Payment', page:12, text:'Fees set forth in Exhibit A shall remain fixed for the Initial Term. No adjustment for inflation or cost increases shall apply during the Initial Term.'},
+  '6.3': {id:'6.3', heading:'Change Orders', page:14, text:'Client-initiated change orders shall be reviewed and approved or rejected within five (5) business days of submission.'},
+  '7.2': {id:'7.2', heading:'Reporting', page:16, text:'Vendor shall deliver a quarterly service performance report within fifteen (15) days following the end of each calendar quarter.'},
+  '9.1': {id:'9.1', heading:'Audit Rights', page:19, text:"Client may audit Vendor's compliance with this Agreement no more than once per calendar year, upon thirty (30) days prior written notice."},
+  '9.4': {id:'9.4', heading:'Security Certification', page:20, text:'Vendor shall provide an annual SOC 2 Type II report or equivalent security audit certificate no later than October 1 of each year.'},
+  '10.2': {id:'10.2', heading:'Insurance', page:22, text:'Vendor shall maintain and provide certificates of commercial general liability and cyber liability insurance, renewed annually.'},
+  '12.1': {id:'12.1', heading:'Data Protection Addendum', page:26, text:"Vendor shall execute and maintain a Data Processing Addendum in the form attached as Exhibit C. The DPA shall remain in effect for the duration of Vendor's data processing activities."},
+  '12.4': {id:'12.4', heading:'Breach Notification', page:27, text:'Vendor shall notify Client of any data breach affecting Client Data within seventy-two (72) hours of discovery.'},
+  '13.2': {id:'13.2', heading:'Limitation of Liability', page:29, text:"Except for breaches of Section 12 (Data Protection), neither Party's aggregate liability under this Agreement shall exceed the fees paid in the preceding twelve (12) months. Liability for breach of Section 12 shall not be subject to any cap.", standardText:"Neither Party's aggregate liability under this Agreement shall exceed the fees paid in the preceding twelve (12) months, provided that this limitation shall not apply to breaches of confidentiality or indemnification obligations."},
+  '13.5': {id:'13.5', heading:'Indemnification', page:30, text:"Client shall indemnify, defend, and hold harmless Vendor from any and all third-party claims arising out of Client's use of the Deliverables, without limitation as to dollar amount.", standardText:'Each Party shall indemnify, defend, and hold harmless the other Party from third-party claims arising out of its breach of this Agreement, up to the aggregate liability cap set forth in Section 13.2.'},
+  '14.1': {id:'14.1', heading:'Termination for Convenience', page:32, text:'Either Party may terminate this Agreement for convenience upon ninety (90) days prior written notice to the other Party.'},
+  '14.3': {id:'14.3', heading:'Early Termination Fee', page:32, text:'In the event Client terminates for convenience prior to the end of the Initial Term, Client shall pay an early termination fee equal to six (6) months of then-current fees.'}
+};
+
+const CLAUSE_ORDER = ['2.3','4.5','5.1','5.4','6.3','7.2','9.1','9.4','10.2','12.1','12.4','13.2','13.5','14.1','14.3'];
+
+const OBLIGATION_TYPES = [
+  {key:'all', label:'All'}, {key:'payment', label:'Payment'}, {key:'delivery', label:'Delivery'},
+  {key:'reporting', label:'Reporting'}, {key:'compliance', label:'Compliance'},
+  {key:'data_protection', label:'Data Protection'}, {key:'renewal', label:'Renewal'}, {key:'termination', label:'Termination'}
+];
+
+const RISK_CATEGORIES = [
+  {key:'all', label:'All'}, {key:'commercial', label:'Commercial'}, {key:'legal', label:'Legal'},
+  {key:'compliance', label:'Compliance'}, {key:'delivery', label:'Delivery'}, {key:'termination_renewal', label:'Renewal / Termination'}
+];
+
+const TYPE_LABELS = {payment:'Payment', delivery:'Delivery', reporting:'Reporting', compliance:'Compliance', data_protection:'Data Protection', renewal:'Renewal', termination:'Termination'};
+const CATEGORY_LABELS = {commercial:'Commercial', legal:'Legal', compliance:'Compliance', delivery:'Delivery', termination_renewal:'Renewal / Termination'};
+
+const UPLOAD_STEPS = [
+  'Detecting page types (native text vs scanned)...',
+  'Running OCR on scanned pages (vision model)...',
+  'Clause-aware chunking...',
+  'Extracting obligations, dates & owners...',
+  'Assessing risk against clause library...',
+  'Embedding & indexing (Qdrant + Postgres)...',
+  'Done - contract ready for review.'
+];
+
+const HOW_STEPS = [
+  {n:1, title:'Ingest & OCR', text:'Native-text pages parse directly; scanned pages fall back to vision-model OCR, structure preserved.'},
+  {n:2, title:'Extract & structure', text:'Obligations, dates, owners, and contract metadata are pulled into a structured, queryable record.'},
+  {n:3, title:'Assess risk', text:'Clauses are checked against a standard library and a risk rubric to flag high-risk, non-standard terms.'},
+  {n:4, title:'Ask & verify', text:'Ask follow-up questions and get cited answers, with a confidence flag when the system is unsure.'}
+];
+
+const FEATURES = [
+  {title:'Obligation tracker', text:'Every due date, owner, and commitment in one sortable, filterable view.'},
+  {title:'Risk detection', text:'Commercial, legal, compliance, and delivery risks surfaced with plain-English rationale.'},
+  {title:'Traceable citations', text:'Every extracted fact and answer links back to the exact source clause.'},
+  {title:'Non-standard clause diff', text:'See exactly how a clause deviates from your standard template, side by side.'},
+  {title:'Renewal timeline', text:'Never miss a renewal or termination notice window again.'},
+  {title:'Faithfulness guard', text:'Low-confidence answers are flagged for human review instead of stated as fact.'}
+];
+
+const RAI_POINTS = [
+  'All processing runs locally - contracts never leave your environment.',
+  'This demo uses anonymized, synthetic contract data only.',
+  'Every extracted fact and answer cites its source clause for verification.',
+  'Low-confidence answers are flagged "verify source" rather than stated as fact.'
+];
+
+const TODAY = new Date('2026-07-07T00:00:00');
+
+class Component extends DCLogic {
+  state = {
+    view: 'landing',
+    prevView: 'overview',
+    selectedClauseId: '2.3',
+    obligationFilterType: 'all',
+    obligationSortDir: 'asc',
+    obligationDueSoonOnly: false,
+    riskFilterCategory: 'all',
+    uploadRunning: false,
+    uploadStepIndex: -1,
+    askThread: [
+      {role:'user', text:'What are our options if we want to end this agreement early?'},
+      {role:'ai', text:'Client may terminate for convenience with 90 days written notice (\u00a714.1). Terminating before the end of the Initial Term triggers an early termination fee equal to six months of then-current fees (\u00a714.3). Termination for uncured material breach is also available after a 15-day cure period.', citations:['14.1','14.3'], confidence:'verified'}
+    ],
+    askInput: ''
+  };
+
+  fmtDate(str) {
+    if (!str) return '\u2014';
+    const d = new Date(str + 'T00:00:00');
+    return d.toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric'});
+  }
+
+  goTo(view) { this.setState({ view }); }
+
+  openClause(clauseId) {
+    this.setState(s => ({ selectedClauseId: clauseId, prevView: (s.view === 'clause' ? s.prevView : s.view), view: 'clause' }));
+  }
+
+  toggleObligationSort() {
+    this.setState(s => ({ obligationSortDir: s.obligationSortDir === 'asc' ? 'desc' : 'asc' }));
+  }
+
+  setObligationFilter(key) { this.setState({ obligationFilterType: key }); }
+  toggleDueSoon() { this.setState(s => ({ obligationDueSoonOnly: !s.obligationDueSoonOnly })); }
+  setRiskFilter(key) { this.setState({ riskFilterCategory: key }); }
+
+  runUploadDemo() {
+    if (this.state.uploadRunning) return;
+    this.setState({ uploadRunning: true, uploadStepIndex: 0 });
+    const advance = (i) => {
+      this._uploadTimer = setTimeout(() => {
+        if (i >= UPLOAD_STEPS.length - 1) {
+          this.setState({ uploadStepIndex: i, uploadRunning: false });
+          return;
+        }
+        this.setState({ uploadStepIndex: i });
+        advance(i + 1);
+      }, i === 0 ? 500 : 900);
+    };
+    advance(0);
+  }
+
+  componentWillUnmount() {
+    if (this._uploadTimer) clearTimeout(this._uploadTimer);
+  }
+
+  setAskInput(e) { this.setState({ askInput: e.target.value }); }
+
+  answerFor(text) {
+    const lower = text.toLowerCase();
+    if (lower.indexOf('renew') !== -1) {
+      return { text: 'The agreement auto-renews for 12-month terms unless either party gives written notice at least 30 days before the term ends (\u00a72.3). That window is narrower than the 60-90 days typical in similar agreements - worth calendaring early.', citations: ['2.3'], confidence: 'verified' };
+    }
+    if (lower.indexOf('liab') !== -1 || lower.indexOf('breach') !== -1 || lower.indexOf('risk') !== -1) {
+      return { text: 'Liability is capped at the prior 12 months of fees for most breaches, but that cap explicitly does not apply to breaches of Section 12 (Data Protection) (\u00a713.2). A breach must also be reported within 72 hours (\u00a712.4). This uncapped exposure is flagged as a high-severity, non-standard risk.', citations: ['13.2', '12.4'], confidence: 'verified' };
+    }
+    if (lower.indexOf('terminat') !== -1) {
+      return { text: 'Either party may terminate for convenience with 90 days notice (\u00a714.1); doing so before the Initial Term ends triggers a fee equal to six months of fees (\u00a714.3).', citations: ['14.1', '14.3'], confidence: 'verified' };
+    }
+    if (lower.indexOf('non-standard') !== -1 || lower.indexOf('nonstandard') !== -1 || lower.indexOf('unusual') !== -1) {
+      return { text: 'Three clauses deviate from your standard templates: the 30-day renewal notice window (\u00a72.3), uncapped data-breach liability (\u00a713.2), and uncapped Client indemnification (\u00a713.5). Recommend legal review before signing.', citations: ['2.3', '13.2', '13.5'], confidence: 'low' };
+    }
+    return { text: "I can answer questions grounded in this contract's clauses - try asking about renewal, liability, termination, or non-standard terms.", citations: [], confidence: 'low' };
+  }
+
+  sendAsk() {
+    const text = (this.state.askInput || '').trim();
+    if (!text) return;
+    const answer = this.answerFor(text);
+    this.setState(s => ({
+      askThread: [...s.askThread, {role:'user', text}, {role:'ai', text: answer.text, citations: answer.citations, confidence: answer.confidence}],
+      askInput: ''
+    }));
+  }
+
+  sendPreset(text) {
+    const answer = this.answerFor(text);
+    this.setState(s => ({
+      askThread: [...s.askThread, {role:'user', text}, {role:'ai', text: answer.text, citations: answer.citations, confidence: answer.confidence}],
+      askInput: ''
+    }));
+  }
+
+  onAskKeyDown(e) {
+    if (e.key === 'Enter') { e.preventDefault(); this.sendAsk(); }
+  }
+
+  renderVals() {
+    const s = this.state;
+    const view = s.view;
+    const navBg = 'oklch(23% 0.03 262)';
+    const navBgOff = 'transparent';
+
+    const navItems = [
+      {key:'overview', label:'Overview'},
+      {key:'tracker', label:'Tracker'},
+      {key:'risk', label:'Risks'},
+      {key:'ask', label:'Ask'}
+    ].map(n => {
+      const active = view === n.key;
+      return { ...n, active, bg: active ? navBg : navBgOff, color: active ? 'white' : 'oklch(42% 0.025 260)', onClick: () => this.goTo(n.key) };
+    });
+
+    // obligations
+    let filteredObligations = OBLIGATIONS.filter(o => s.obligationFilterType === 'all' || o.type === s.obligationFilterType);
+    if (s.obligationDueSoonOnly) {
+      filteredObligations = filteredObligations.filter(o => {
+        if (!o.dueDate) return false;
+        const diff = (new Date(o.dueDate + 'T00:00:00') - TODAY) / 86400000;
+        return diff <= 90;
+      });
+    }
+    filteredObligations = [...filteredObligations].sort((a, b) => {
+      if (!a.dueDate && !b.dueDate) return 0;
+      if (!a.dueDate) return 1;
+      if (!b.dueDate) return -1;
+      const diff = new Date(a.dueDate) - new Date(b.dueDate);
+      return s.obligationSortDir === 'asc' ? diff : -diff;
+    });
+    const obligationsView = filteredObligations.map(o => {
+      let statusLabel = 'Ongoing', statusColor = 'oklch(60% 0.018 258)', statusBg = 'oklch(95% 0.012 72)';
+      if (o.dueDate) {
+        const diff = (new Date(o.dueDate + 'T00:00:00') - TODAY) / 86400000;
+        if (diff < 0) { statusLabel = 'Overdue'; statusColor = 'oklch(53% 0.17 27)'; statusBg = 'oklch(94% 0.045 30)'; }
+        else if (diff <= 30) { statusLabel = 'Due soon'; statusColor = 'oklch(60% 0.14 63)'; statusBg = 'oklch(95% 0.045 70)'; }
+        else { statusLabel = 'Upcoming'; statusColor = 'oklch(42% 0.025 260)'; statusBg = 'oklch(95% 0.012 72)'; }
+      }
+      return {
+        ...o,
+        typeLabel: TYPE_LABELS[o.type],
+        dueLabel: o.dueDate ? this.fmtDate(o.dueDate) : (o.type === 'termination' ? 'Notice-based' : 'Trigger-based'),
+        statusLabel, statusColor, statusBg,
+        onOpen: () => this.openClause(o.sourceClauseId)
+      };
+    });
+    const obligationTypeChips = OBLIGATION_TYPES.map(t => {
+      const active = s.obligationFilterType === t.key;
+      return { ...t, active, bg: active ? navBg : 'oklch(95% 0.012 72)', color: active ? 'white' : 'oklch(42% 0.025 260)', onClick: () => this.setObligationFilter(t.key) };
+    });
+
+    // risks
+    const sevOrder = {high:0, med:1, low:2};
+    const sevMap = {
+      high: {label:'High', color:'oklch(53% 0.17 27)', bg:'oklch(94% 0.045 30)'},
+      med: {label:'Medium', color:'oklch(60% 0.14 63)', bg:'oklch(95% 0.045 70)'},
+      low: {label:'Low', color:'oklch(50% 0.09 150)', bg:'oklch(94% 0.035 150)'}
+    };
+    const filteredRisks = RISKS.filter(r => s.riskFilterCategory === 'all' || r.category === s.riskFilterCategory);
+    const risksView = [...filteredRisks].sort((a,b) => sevOrder[a.severity]-sevOrder[b.severity]).map(r => {
+      const sev = sevMap[r.severity];
+      return { ...r, notNonStandard: !r.nonStandard, categoryLabel: CATEGORY_LABELS[r.category], severityLabel: sev.label, severityColor: sev.color, severityBg: sev.bg, onOpen: () => this.openClause(r.sourceClauseId) };
+    });
+    const riskCategoryChips = RISK_CATEGORIES.map(c => {
+      const active = s.riskFilterCategory === c.key;
+      return { ...c, active, bg: active ? navBg : 'oklch(95% 0.012 72)', color: active ? 'white' : 'oklch(42% 0.025 260)', onClick: () => this.setRiskFilter(c.key) };
+    });
+    const riskCounts = {
+      high: RISKS.filter(r=>r.severity==='high').length,
+      med: RISKS.filter(r=>r.severity==='med').length,
+      low: RISKS.filter(r=>r.severity==='low').length
+    };
+
+    // overview
+    const topRisksView = [...RISKS].sort((a,b)=>sevOrder[a.severity]-sevOrder[b.severity]).slice(0,3).map(r => {
+      const colorMap = {high:'oklch(53% 0.17 27)', med:'oklch(60% 0.14 63)', low:'oklch(50% 0.09 150)'};
+      return { ...r, severityColor: colorMap[r.severity], onOpen: () => this.openClause(r.sourceClauseId) };
+    });
+    const upcomingPreview = [...OBLIGATIONS].filter(o=>o.dueDate).sort((a,b)=>new Date(a.dueDate)-new Date(b.dueDate)).slice(0,3).map(o => ({ ...o, dueLabel: this.fmtDate(o.dueDate), typeLabel: TYPE_LABELS[o.type], onOpen: () => this.openClause(o.sourceClauseId) }));
+    const nextRenewal = this.fmtDate('2026-08-01');
+    const highRiskCount = RISKS.filter(r=>r.severity==='high').length;
+
+    // clause detail
+    const clause = CLAUSES[s.selectedClauseId] || CLAUSES['2.3'];
+    const linkedObligations = OBLIGATIONS.filter(o => o.sourceClauseId === clause.id).map(o => ({ ...o, dueLabel: o.dueDate ? this.fmtDate(o.dueDate) : 'Ongoing / trigger-based' }));
+    const linkedRisk = RISKS.find(r => r.sourceClauseId === clause.id);
+    const idx = CLAUSE_ORDER.indexOf(clause.id);
+    const prevClauseId = idx > 0 ? CLAUSE_ORDER[idx-1] : null;
+    const nextClauseId = idx < CLAUSE_ORDER.length-1 ? CLAUSE_ORDER[idx+1] : null;
+
+    // upload
+    const lastStepIdx = UPLOAD_STEPS.length - 1;
+    const uploadStepsView = UPLOAD_STEPS.map((label, i) => {
+      const done = s.uploadStepIndex > i || (s.uploadStepIndex === i && i === lastStepIdx);
+      const active = s.uploadStepIndex === i && i !== lastStepIdx;
+      return {
+        label,
+        icon: done ? '\u2713' : (active ? '\u25cf' : '\u25cb'),
+        iconColor: done ? 'oklch(50% 0.09 150)' : (active ? 'oklch(46% 0.13 58)' : 'oklch(70% 0.02 258)'),
+        textColor: (done || active) ? 'oklch(23% 0.03 262)' : 'oklch(60% 0.018 258)'
+      };
+    });
+    const uploadComplete = s.uploadStepIndex === lastStepIdx;
+
+    // ask
+    const askThreadView = s.askThread.map(m => {
+      const isUser = m.role === 'user';
+      const citationsView = (m.citations||[]).map(cid => ({ id: cid, onOpen: () => this.openClause(cid) }));
+      return {
+        ...m,
+        alignSelf: isUser ? 'flex-end' : 'flex-start',
+        bubbleBg: isUser ? 'oklch(23% 0.03 262)' : 'oklch(97% 0.012 75)',
+        bubbleColor: isUser ? 'white' : 'oklch(23% 0.03 262)',
+        bubbleBorder: isUser ? 'none' : '1px solid oklch(88% 0.014 70)',
+        citationsView,
+        hasCitations: citationsView.length > 0,
+        showConfidence: !isUser && !!m.confidence,
+        confidenceLabel: m.confidence === 'verified' ? 'Verified' : 'Low confidence \u2014 verify source',
+        confidenceColor: m.confidence === 'verified' ? 'oklch(50% 0.09 150)' : 'oklch(53% 0.17 27)',
+        confidenceBg: m.confidence === 'verified' ? 'oklch(94% 0.035 150)' : 'oklch(94% 0.045 30)'
+      };
+    });
+
+    return {
+      view,
+      isLanding: view === 'landing',
+      isUpload: view === 'upload',
+      isOverview: view === 'overview',
+      isTracker: view === 'tracker',
+      isRisk: view === 'risk',
+      isClause: view === 'clause',
+      isAsk: view === 'ask',
+      showApp: view !== 'landing',
+      navItems,
+      goLanding: () => this.goTo('landing'),
+      goOverview: () => this.goTo('overview'),
+      goUpload: () => this.goTo('upload'),
+      goTracker: () => this.goTo('tracker'),
+      goRisk: () => this.goTo('risk'),
+      goAsk: () => this.goTo('ask'),
+      goBackFromClause: () => this.goTo(s.prevView),
+
+      howSteps: HOW_STEPS,
+      features: FEATURES,
+      raiPoints: RAI_POINTS,
+
+      obligationsView, obligationTypeChips,
+      obligationsEmpty: obligationsView.length === 0,
+      sortArrow: s.obligationSortDir === 'asc' ? '\u2191' : '\u2193',
+      toggleObligationSort: () => this.toggleObligationSort(),
+      obligationDueSoonOnly: s.obligationDueSoonOnly,
+      dueSoonBg: s.obligationDueSoonOnly ? navBg : 'oklch(95% 0.012 72)',
+      dueSoonColor: s.obligationDueSoonOnly ? 'white' : 'oklch(42% 0.025 260)',
+      toggleDueSoon: () => this.toggleDueSoon(),
+
+      risksView, riskCategoryChips, riskCounts,
+
+      topRisksView, upcomingPreview, nextRenewal, highRiskCount,
+      totalObligations: OBLIGATIONS.length,
+      totalClauses: 68,
+
+      clause, linkedObligations,
+      noLinkedObligations: linkedObligations.length === 0,
+      hasLinkedRisk: !!linkedRisk,
+      noLinkedRisk: !linkedRisk,
+      linkedRiskSeverity: linkedRisk ? sevMap[linkedRisk.severity].label : '',
+      linkedRiskColor: linkedRisk ? sevMap[linkedRisk.severity].color : '',
+      linkedRiskBg: linkedRisk ? sevMap[linkedRisk.severity].bg : '',
+      linkedRiskTitle: linkedRisk ? linkedRisk.title : '',
+      linkedRiskRationale: linkedRisk ? linkedRisk.rationale : '',
+      hasStandardText: !!clause.standardText,
+      prevColor: prevClauseId ? 'oklch(23% 0.03 262)' : 'oklch(75% 0.01 258)',
+      nextColor: nextClauseId ? 'oklch(23% 0.03 262)' : 'oklch(75% 0.01 258)',
+      goPrevClause: () => { if (prevClauseId) this.openClause(prevClauseId); },
+      goNextClause: () => { if (nextClauseId) this.openClause(nextClauseId); },
+
+      uploadStepsView, uploadRunning: s.uploadRunning, uploadComplete,
+      uploadStarted: s.uploadStepIndex >= 0,
+      uploadProgressPct: s.uploadStepIndex < 0 ? 0 : Math.round(((s.uploadStepIndex+1)/UPLOAD_STEPS.length)*100),
+      simulateBtnOpacity: s.uploadRunning ? 0.5 : 1,
+      runUploadDemo: () => this.runUploadDemo(),
+
+      askThreadView, askInput: s.askInput,
+      setAskInput: (e) => this.setAskInput(e),
+      sendAsk: () => this.sendAsk(),
+      sendPresetRenewal: () => this.sendPreset('When does this contract renew, and how do we stop it?'),
+      sendPresetLiability: () => this.sendPreset("What's our liability exposure if there's a data breach?"),
+      sendPresetNonstandard: () => this.sendPreset('Is there anything non-standard compared to our usual contracts?'),
+      onAskKeyDown: (e) => this.onAskKeyDown(e)
+    };
+  }
+}
+</script>
+</body>
+</html>

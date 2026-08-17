@@ -1,0 +1,216 @@
+"use client";
+
+import Link from "next/link";
+import { useParams } from "next/navigation";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { api, Contract, Obligation, Risk } from "@/lib/api";
+import { SeverityDot } from "@/components/ui";
+import { fmtDate, daysUntil, typeLabel, SEV_RANK } from "@/lib/format";
+
+const PROCESSING = ["queued", "parsing", "chunking", "indexing", "extracting", "analyzing", "summarizing"];
+
+function clauseHref(clauseId: string, quote?: string | null) {
+  return `/clauses/${clauseId}?q=${encodeURIComponent(quote || "")}`;
+}
+
+export default function OverviewPage() {
+  const { id } = useParams<{ id: string }>();
+  const [contract, setContract] = useState<Contract | null>(null);
+  const [risks, setRisks] = useState<Risk[]>([]);
+  const [obligations, setObligations] = useState<Obligation[]>([]);
+  const [error, setError] = useState<string | null>(null);
+
+  const load = useCallback(async () => {
+    try {
+      const c = await api.getContract(id);
+      setContract(c);
+      if (c.status === "done") {
+        const [r, o] = await Promise.all([api.risks(id), api.obligations(id)]);
+        setRisks(r);
+        setObligations(o);
+      }
+    } catch (e) {
+      setError((e as Error).message);
+    }
+  }, [id]);
+
+  useEffect(() => {
+    load();
+    const t = setInterval(() => {
+      setContract((cur) => {
+        if (!cur || PROCESSING.includes(cur.status)) load();
+        return cur;
+      });
+    }, 3000);
+    return () => clearInterval(t);
+  }, [load]);
+
+  const topRisks = useMemo(
+    () => [...risks].sort((a, b) => SEV_RANK[a.severity] - SEV_RANK[b.severity]).slice(0, 3),
+    [risks]
+  );
+  const upcoming = useMemo(
+    () =>
+      obligations
+        .filter((o) => daysUntil(o.due_date) !== null)
+        .sort((a, b) => (daysUntil(a.due_date) ?? 0) - (daysUntil(b.due_date) ?? 0))
+        .slice(0, 3),
+    [obligations]
+  );
+  const highRiskCount = risks.filter((r) => r.severity === "high").length;
+  const nextRenewal = useMemo(() => {
+    const renewals = obligations
+      .filter((o) => o.obligation_type === "renewal" && daysUntil(o.due_date) !== null)
+      .sort((a, b) => (daysUntil(a.due_date) ?? 0) - (daysUntil(b.due_date) ?? 0));
+    const pick = renewals[0] || upcoming[0];
+    return pick ? fmtDate(pick.due_date) : "—";
+  }, [obligations, upcoming]);
+
+  if (error) return <div className="error">{error}</div>;
+  if (!contract)
+    return (
+      <p className="muted">
+        <span className="spinner" /> Loading…
+      </p>
+    );
+
+  const meta = contract.meta;
+  const title = contract.filename.replace(/\.[^.]+$/, "");
+  const parties = meta?.parties?.length ? meta.parties.join(" ↔ ") : null;
+
+  return (
+    <main>
+      <div className="flex between" style={{ alignItems: "flex-start", marginBottom: 24 }}>
+        <div>
+          <div className="flex items-center gap-12" style={{ marginBottom: 6 }}>
+            <h1 style={{ margin: 0 }}>{title}</h1>
+            {contract.status === "done" ? (
+              <span className="badge" style={{ color: "var(--sev-low)", background: "var(--sev-low-bg)" }}>Active</span>
+            ) : (
+              <span className="badge" style={{ color: "var(--sev-med)", background: "var(--sev-med-bg)" }}>
+                <span className="spinner" /> {contract.progress || contract.status}
+              </span>
+            )}
+          </div>
+          {parties && <div style={{ color: "var(--muted-2)", fontSize: 15 }}>{parties}</div>}
+        </div>
+        <Link href={`/contracts/${id}/ask`} className="btn btn-ghost">Ask about this contract</Link>
+      </div>
+
+      {contract.status === "failed" && (
+        <div className="error">Ingestion failed: {contract.progress}</div>
+      )}
+
+      {PROCESSING.includes(contract.status) && (
+        <div className="card">
+          <p className="mb-0">
+            <span className="spinner" /> Processing this contract — {contract.progress || contract.status}. This
+            page updates automatically.
+          </p>
+        </div>
+      )}
+
+      {meta && (
+        <div
+          className="card"
+          style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(160px,1fr))", gap: 16, padding: "20px 24px" }}
+        >
+          <Term label="Effective Date" value={meta.effective_date} />
+          <Term label="Term" value={meta.term} />
+          <Term label="Governing Law" value={meta.governing_law} />
+          <Term label="Total Value" value={meta.total_value} />
+          {meta.renewal_terms && <Term label="Renewal" value={meta.renewal_terms} />}
+          {meta.termination_terms && <Term label="Termination" value={meta.termination_terms} />}
+        </div>
+      )}
+
+      {contract.summary && (
+        <div className="card">
+          <h2>Executive Summary</h2>
+          <p style={{ fontSize: 14.5, lineHeight: 1.65, margin: "0 0 12px", whiteSpace: "pre-wrap" }}>
+            {contract.summary}
+          </p>
+          <p className="disclaimer">
+            Generated by AI from contract clauses — verify against source before relying on this summary.
+          </p>
+        </div>
+      )}
+
+      {contract.status === "done" && (
+        <>
+          <div className="grid" style={{ gridTemplateColumns: "repeat(4,1fr)", marginBottom: 24 }}>
+            <Stat n={contract.num_obligations} label="Obligations tracked" />
+            <Stat n={highRiskCount} label="High-risk flags" color="var(--sev-high)" />
+            <Stat n={nextRenewal} label="Next renewal deadline" />
+            <Stat n={contract.num_clauses} label="Clauses reviewed" />
+          </div>
+
+          <div className="grid" style={{ gridTemplateColumns: "1fr 1fr", gap: 20 }}>
+            <div>
+              <div className="flex between" style={{ alignItems: "baseline", marginBottom: 12 }}>
+                <div className="section-title">Top risks</div>
+                <Link href={`/contracts/${id}/risks`} style={{ fontSize: 13, fontWeight: 600 }}>View all →</Link>
+              </div>
+              {topRisks.length === 0 ? (
+                <p className="muted">No risks flagged.</p>
+              ) : (
+                topRisks.map((r) => (
+                  <Link key={r.id} href={clauseHref(r.source_clause_id, r.source_quote)} className="row-card">
+                    <SeverityDot severity={r.severity} style={{ marginTop: 5 }} />
+                    <div>
+                      <div style={{ fontSize: 14, fontWeight: 600, marginBottom: 3 }}>{r.title}</div>
+                      <div style={{ fontSize: 12.5, color: "var(--muted)" }}>view source clause →</div>
+                    </div>
+                  </Link>
+                ))
+              )}
+            </div>
+
+            <div>
+              <div className="flex between" style={{ alignItems: "baseline", marginBottom: 12 }}>
+                <div className="section-title">Upcoming obligations</div>
+                <Link href={`/contracts/${id}/obligations`} style={{ fontSize: 13, fontWeight: 600 }}>View all →</Link>
+              </div>
+              {upcoming.length === 0 ? (
+                <p className="muted">No dated obligations.</p>
+              ) : (
+                upcoming.map((o) => (
+                  <Link key={o.id} href={clauseHref(o.source_clause_id, o.source_quote)} className="row-card between">
+                    <div>
+                      <div style={{ fontSize: 14, fontWeight: 600, marginBottom: 3 }}>{o.description}</div>
+                      <div style={{ fontSize: 12.5, color: "var(--muted)" }}>
+                        {typeLabel(o.obligation_type)}
+                        {o.obligated_party ? ` · ${o.obligated_party}` : ""}
+                      </div>
+                    </div>
+                    <div style={{ fontSize: 13, fontWeight: 600, whiteSpace: "nowrap", marginLeft: 12 }}>
+                      {fmtDate(o.due_date)}
+                    </div>
+                  </Link>
+                ))
+              )}
+            </div>
+          </div>
+        </>
+      )}
+    </main>
+  );
+}
+
+function Term({ label, value }: { label: string; value?: string | null }) {
+  return (
+    <div>
+      <div className="term-label">{label}</div>
+      <div className="term-value">{value || "—"}</div>
+    </div>
+  );
+}
+
+function Stat({ n, label, color }: { n: React.ReactNode; label: string; color?: string }) {
+  return (
+    <div className="stat-card">
+      <div className="stat-num" style={color ? { color } : undefined}>{n}</div>
+      <div className="stat-label">{label}</div>
+    </div>
+  );
+}

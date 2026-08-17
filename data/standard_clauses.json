@@ -1,0 +1,52 @@
+[
+  {
+    "type": "liability",
+    "title": "Standard Limitation of Liability",
+    "text": "Each party's total aggregate liability arising out of or in connection with this Agreement, whether in contract, tort or otherwise, shall not exceed the total fees paid or payable by the customer in the twelve (12) months preceding the event giving rise to the claim. Neither party shall be liable for any indirect, incidental, special or consequential damages, or for loss of profits, revenue or data. Nothing in this Agreement excludes or limits liability for fraud, wilful misconduct, or any liability that cannot be excluded by applicable law."
+  },
+  {
+    "type": "renewal",
+    "title": "Standard Term and Renewal",
+    "text": "This Agreement commences on the Effective Date and continues for an initial term of twelve (12) months. Thereafter it renews for successive twelve (12) month terms unless either party gives written notice of non-renewal at least sixty (60) days before the end of the then-current term. Any fee increase at renewal shall not exceed the lesser of three percent (3%) or the applicable consumer price index change, and shall be notified at least ninety (90) days in advance."
+  },
+  {
+    "type": "termination",
+    "title": "Standard Termination",
+    "text": "Either party may terminate this Agreement by written notice if the other party materially breaches the Agreement and fails to cure the breach within thirty (30) days of receiving written notice. Either party may terminate for convenience on ninety (90) days prior written notice. Upon termination, the provider shall return or securely delete all customer data within thirty (30) days and refund any prepaid fees covering the period after the effective date of termination on a pro rata basis."
+  },
+  {
+    "type": "payment",
+    "title": "Standard Fees and Payment",
+    "text": "The customer shall pay the fees set out in the applicable order form. The provider shall invoice monthly in arrears and the customer shall pay each undisputed invoice within thirty (30) days of receipt. The provider may charge interest on overdue undisputed amounts at the statutory rate. Fees are exclusive of applicable taxes, which shall be payable by the customer. Fees are fixed for the initial term."
+  },
+  {
+    "type": "data_protection",
+    "title": "Standard Data Protection",
+    "text": "Each party shall comply with applicable data protection laws, including the GDPR where applicable. The provider shall process personal data only on the customer's documented instructions and in accordance with the Data Processing Agreement (DPA) executed by the parties, which forms an integral part of this Agreement. The provider shall implement appropriate technical and organisational measures, notify the customer of any personal data breach without undue delay and at the latest within seventy-two (72) hours, and shall not engage sub-processors or transfer personal data internationally without the customer's prior authorisation."
+  },
+  {
+    "type": "confidentiality",
+    "title": "Standard Confidentiality",
+    "text": "Each party shall keep confidential all non-public information disclosed by the other party in connection with this Agreement, protect it with at least reasonable care, and use it solely to perform its obligations under this Agreement. Confidential information may be disclosed to employees, advisers and contractors with a need to know who are bound by equivalent obligations. The obligations survive for three (3) to five (5) years after termination and do not apply to information that is public, independently developed, or lawfully received from a third party."
+  },
+  {
+    "type": "delivery",
+    "title": "Standard Service Levels",
+    "text": "The provider shall make the service available at least 99.5% of the time in each calendar month, excluding scheduled maintenance notified in advance. If availability falls below the committed level, the customer is entitled to service credits calculated as a percentage of the monthly fee, and may terminate without penalty if the availability commitment is missed in consecutive months. The provider shall deliver periodic service reports describing availability and incidents."
+  },
+  {
+    "type": "indemnification",
+    "title": "Standard IP Indemnity",
+    "text": "The provider shall defend and indemnify the customer against third-party claims alleging that the service infringes intellectual property rights, provided the customer promptly notifies the provider, grants control of the defence, and provides reasonable assistance. The provider may procure the right to continue use, modify the service to be non-infringing, or terminate and refund prepaid fees. The customer shall indemnify the provider against claims arising from customer data or misuse of the service."
+  },
+  {
+    "type": "governing_law",
+    "title": "Standard Governing Law and Disputes",
+    "text": "This Agreement is governed by the laws agreed by the parties, excluding conflict-of-law rules. The parties shall first attempt in good faith to resolve any dispute through senior-management escalation. Failing resolution within thirty (30) days, disputes shall be finally resolved by the courts of, or arbitration seated in, the agreed jurisdiction, conducted in the English language."
+  },
+  {
+    "type": "reporting",
+    "title": "Standard Reporting and Audit",
+    "text": "The provider shall deliver periodic service and performance reports and participate in regular service reviews. The customer may audit the provider's compliance with this Agreement not more than once per year, on at least thirty (30) days written notice, during normal business hours, subject to the provider's reasonable security policies, and at the customer's cost."
+  }
+]

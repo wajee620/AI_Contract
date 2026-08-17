@@ -1,0 +1,55 @@
+services:
+  qdrant:
+    image: qdrant/qdrant:v1.9.2
+    ports:
+      - "6333:6333"
+    volumes:
+      - qdrant_data:/qdrant/storage
+
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: contract
+      POSTGRES_PASSWORD: contract
+      POSTGRES_DB: contracts
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U contract -d contracts"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql+psycopg2://contract:contract@postgres:5432/contracts
+      QDRANT_URL: http://qdrant:6333
+      VECTOR_BACKEND: qdrant
+      DATA_DIR: /data
+    volumes:
+      # Gateway key stays in .env only — mounted read-only, never baked into the image.
+      - ./.env:/app/.env:ro
+      - ./data:/data
+    depends_on:
+      postgres:
+        condition: service_healthy
+      qdrant:
+        condition: service_started
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:8000
+    depends_on:
+      - backend
+
+volumes:
+  qdrant_data:
+  pg_data:

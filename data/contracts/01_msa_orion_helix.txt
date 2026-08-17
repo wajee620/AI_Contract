@@ -1,0 +1,48 @@
+MASTER SERVICES AGREEMENT
+
+This Master Services Agreement (the "Agreement") is entered into as of 1 March 2026 (the "Effective Date") by and between Orion Analytics Pte. Ltd., a company incorporated in Singapore with registered office at 12 Marina View, Singapore ("Provider"), and Helix Logistics Ltd., a company incorporated in England and Wales with registered office at 45 Fenchurch Street, London ("Customer"). Provider and Customer are each a "Party" and together the "Parties".
+
+1. Definitions
+"Services" means the freight-analytics platform services described in Section 2 and each Statement of Work. "Deliverables" means the reports, dashboards and data outputs produced for Customer. "Security Incident" means any confirmed unauthorized access to or disclosure of Customer Data. "Customer Data" means all data, including personal data of Customer's end customers, submitted to the platform by or on behalf of Customer. "Fees" has the meaning given in Section 4.
+
+2. Scope of Services
+Provider shall operate, host and support the Orion freight-analytics platform for Customer, including data onboarding, route-optimization dashboards and monthly performance reports. Provider shall complete initial data onboarding within thirty (30) days of the Effective Date. Any change to the scope shall be agreed in a written change order signed by both Parties.
+
+3. Term and Renewal
+This Agreement commences on the Effective Date and continues for an initial term of twelve (12) months (the "Initial Term"). Thereafter, this Agreement shall automatically renew for successive twelve (12) month renewal terms unless either Party gives written notice of non-renewal at least fifteen (15) days before the end of the then-current term. Fees for each renewal term may be increased by Provider by up to eight percent (8%) upon renewal.
+
+4. Fees and Payment
+Customer shall pay Provider fees of USD 40,000 per month, amounting to USD 480,000 for the Initial Term. Provider shall invoice monthly in advance, and Customer shall pay each undisputed invoice within forty-five (45) days of receipt. Late payments accrue interest at 1.5% per month or the maximum rate permitted by law, whichever is lower. All Fees are exclusive of applicable taxes.
+
+5. Service Levels
+Provider shall make the platform available 99.5% of the time in each calendar month, excluding scheduled maintenance notified at least 48 hours in advance. If availability falls below 99.5% in a month, Customer is entitled to a service credit of 5% of the monthly fee for each full percentage point of shortfall, capped at 20% of the monthly fee. Provider shall deliver a monthly service-level report to Customer within ten (10) days after each month end.
+
+6. Reporting and Audit
+Provider shall provide quarterly business reviews summarizing usage, performance and roadmap items. Customer may, upon ten (10) days written notice and not more than once per year, audit Provider's compliance with this Agreement during normal business hours. Provider shall retain records relating to the Services for three (3) years.
+
+7. Data Protection
+Provider will process personal data of Customer's end customers, including names, contact details and shipment addresses, solely to provide the Services. Provider shall implement appropriate technical and organisational security measures, including encryption of Customer Data in transit and at rest, and shall notify Customer of any Security Incident without undue delay and in any event within seventy-two (72) hours of becoming aware of it. Provider shall not transfer personal data outside the jurisdictions agreed in writing by Customer.
+
+8. Confidentiality
+Each Party shall keep confidential all non-public information disclosed by the other Party in connection with this Agreement and use it solely to perform its obligations hereunder. This obligation survives for five (5) years after termination. Confidential information excludes information that is publicly available, already known without restriction, or independently developed.
+
+9. Intellectual Property
+Provider retains all rights in the platform and its pre-existing materials. Customer retains all rights in Customer Data. Provider grants Customer a non-exclusive, non-transferable licence to use the Deliverables for its internal business purposes during the term.
+
+10. Liability
+CUSTOMER'S TOTAL AGGREGATE LIABILITY UNDER THIS AGREEMENT SHALL NOT EXCEED THE FEES PAID IN THE TWELVE (12) MONTHS PRECEDING THE CLAIM. PROVIDER'S LIABILITY FOR ANY LOSS ARISING FROM A SECURITY INCIDENT OR BREACH OF SECTION 7 SHALL BE UNLIMITED, AND PROVIDER SHALL BEAR UNLIMITED LIABILITY FOR WILFUL MISCONDUCT. NEITHER PARTY EXCLUDES LIABILITY THAT CANNOT BE EXCLUDED BY LAW.
+
+11. Indemnification
+Provider shall defend and indemnify Customer against third-party claims that the platform infringes intellectual property rights, provided Customer promptly notifies Provider and grants sole control of the defence. Customer shall indemnify Provider against claims arising from Customer Data content unlawfully supplied by Customer.
+
+12. Termination
+Either Party may terminate this Agreement for material breach if the breach remains uncured thirty (30) days after written notice, as described in Section 12.1. Customer may terminate for convenience on ninety (90) days written notice, in which case Customer shall pay all Fees accrued up to the effective date of termination. Provider may suspend the Services if undisputed invoices remain unpaid sixty (60) days after the due date. Upon termination, Provider shall return or delete Customer Data within thirty (30) days, as defined in Section 1.
+
+13. Governing Law and Disputes
+This Agreement is governed by the laws of Singapore. Any dispute arising out of or in connection with this Agreement shall be finally resolved by arbitration administered by the Singapore International Arbitration Centre (SIAC) in accordance with its rules, seated in Singapore, in the English language.
+
+14. Miscellaneous
+This Agreement constitutes the entire agreement between the Parties regarding its subject matter. Neither Party may assign this Agreement without the other Party's prior written consent, not to be unreasonably withheld. Notices must be in writing and delivered to the addresses stated above. If any provision is held unenforceable, the remainder continues in force.
+
+SIGNED for and on behalf of Orion Analytics Pte. Ltd.
+SIGNED for and on behalf of Helix Logistics Ltd.
