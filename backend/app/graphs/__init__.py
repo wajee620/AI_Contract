@@ -9,5 +9,5 @@ LangGraph is used where its state machine + checkpointer + human-in-the-loop
 * obligation_calendar — normalizes obligations into a prioritized deadline calendar.
 
 Every node calls the existing gateway (app.llm.gateway), so MOCK_LLM=1 keeps
-working and we never fight the custom TCS endpoint.
+working and we never fight the custom endpoint.
 """
